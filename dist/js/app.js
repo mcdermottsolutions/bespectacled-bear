@@ -1,4 +1,4 @@
 'use strict';
 
-console.log('yoo');
+console.log('bespectacled bear');
 //# sourceMappingURL=app.js.map
