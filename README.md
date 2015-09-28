@@ -1,10 +1,10 @@
 ## Bespectacled Bear
 
-Grunt starter project, preloaded with all the goodies.  Almost no setup, just dive in
+This is a grunt starter project, preloaded with all the goodies - Babel, Sass, livereload, etc.  If you already have grunt, there's very little setup.
 
 ## Motivation
 
-I was tired of setting up grunt from sratch everytime I used it.
+I wanted to streamline new web projects and skip all the setup time.
 
 ## Installation
 
@@ -21,6 +21,7 @@ npm install
 
 the project directory structure looks like this:
 
+```
 -- dist
    -- style.css
       - style.css.map
@@ -42,6 +43,7 @@ the project directory structure looks like this:
   - index.html
 - Gruntfile.js
 - package.json
+```
 
 The src folder is for working in and the dist folder is the output folder after transpiling the es6 and minimizing the css & js.
 
