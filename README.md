@@ -51,12 +51,15 @@ If you make any changes, you'll want to run
 ```shell
 grunt
 ````
-to recompile the sass, minimize the sass & js and copy everything from src to dist.
+to recompile the sass, retranspile the js, minimize the sass & js and copy everything from src to dist.
+
 
 If you just want to watch for changes as you work, run
 ```shell
 grunt watch
 ````
+and everytime you save, it will recompile the sass, retranspile the js, minimize the sass & js and copy everything from src to dist.
+
 
 If you just want to do live reload and and see your changes update live in the browser, run
 ```shell
