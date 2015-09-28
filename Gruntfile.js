@@ -83,6 +83,19 @@ module.exports = function(grunt) {
       },
     },
 
+    watch: {
+      scripts: {
+        files: ['**/*.*'],
+        tasks: ['clean','sass','cssmin','babel','uglify','copy'],
+        options: {
+          // Start a live reload server on the default port 35729
+          livereload: true,
+          files: ['dist/**/*'],
+        },
+      },
+    }
+
+
 
   });
 
@@ -93,6 +106,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
   grunt.registerTask('default', ['clean','sass','cssmin','babel','uglify','copy']);
