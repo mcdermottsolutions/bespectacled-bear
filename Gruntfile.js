@@ -84,15 +84,26 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      scripts: {
-        files: ['**/*.*'],
-        tasks: ['clean','sass','cssmin','babel','uglify','copy'],
-        options: {
-          // Start a live reload server on the default port 35729
-          livereload: true,
-          files: ['dist/**/*'],
-        },
+      options: {
+        livereload: true,
       },
+      scripts: {
+        files: 'src/**',
+        tasks: ['clean','sass','cssmin','babel','uglify','copy']
+      }
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 9000,
+          base: './dist',
+          hostname: '0.0.0.0',
+          protocol: 'http',
+          livereload: true,
+          open: true,
+        }
+      }
     }
 
 
@@ -107,8 +118,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
   grunt.registerTask('default', ['clean','sass','cssmin','babel','uglify','copy']);
+  grunt.registerTask('server', ['connect','watch']);
 
 };
