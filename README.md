@@ -78,3 +78,5 @@ If you just want to do live reload and and see your changes update live in the b
 grunt server
 ````
 Then go to localhost:9000 in your browser.  You'll need to add the livereload extension to your browser.  http://livereload.com/extensions/
+
+Let me know if you have any questions or anything.
