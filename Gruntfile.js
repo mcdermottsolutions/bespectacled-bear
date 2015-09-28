@@ -6,11 +6,27 @@ module.exports = function(grunt) {
     // set package.json
     pkg: grunt.file.readJSON('package.json'),
 
+    // sass
+    sass: {
+      dist: {
+        options: {                       // Target options
+          style: 'expanded'
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/scss',
+          src: '*.scss',
+          dest: 'dist/css',
+          ext: '.css'
+        }]
+      }
+    },
+
     // cssmin (combines all css files into a single css file)
     cssmin: {
       combine: {
         files: {
-          'dist/css/style.min.css': 'src/css/*.css',
+          'dist/css/style.min.css': 'dist/css/*.css',
         }
       }
     },
@@ -55,18 +71,30 @@ module.exports = function(grunt) {
       build: {
         src: ['dist']
       }
-    }
+    },
+
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'src/',
+        src: ['*','img/*'],
+        dest: 'dist/',
+        filter: 'isFile',
+      },
+    },
 
 
   });
 
   // // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean','cssmin','babel','uglify']);
+  grunt.registerTask('default', ['clean','sass','cssmin','babel','uglify','copy']);
 
 };
