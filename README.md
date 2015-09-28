@@ -8,7 +8,7 @@ This is a Grunt starter project, preloaded with goodies like Babel, Sass, livere
 
 ## Motivation
 
-I wanted to streamline new web projects and skip all the setup time.
+I wanted to streamline new web projects and skip all the setup time.  I also wanted a way to run Babel.
 
 ## Installation
 
