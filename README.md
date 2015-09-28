@@ -47,12 +47,15 @@ the project directory structure looks like this:
 
 The src folder is for working in and the dist folder is the output folder after transpiling the es6 and minimizing the css & js.
 
+---
+
 If you make any changes, you'll want to run
 ```shell
 grunt
 ````
 to recompile the sass, retranspile the js, minimize the sass & js and copy everything from src to dist.
 
+---
 
 If you just want to watch for changes as you work, run
 ```shell
@@ -60,26 +63,10 @@ grunt watch
 ````
 and everytime you save, it will recompile the sass, retranspile the js, minimize the sass & js and copy everything from src to dist.
 
+---
 
 If you just want to do live reload and and see your changes update live in the browser, run
 ```shell
 grunt server
 ````
 Then go to localhost:9000 in your browser.  You'll need to add the livereload extension to your browser.  http://livereload.com/extensions/
-
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
