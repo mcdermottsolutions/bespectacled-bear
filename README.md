@@ -8,7 +8,7 @@ This is a Grunt starter project, preloaded with goodies like Babel, Sass, livere
 
 ## Motivation
 
-I wanted to streamline new web projects and skip all the setup time.  I also wanted a way to run Babel.
+Mostly I was trying to get Babel running so I could write ES6 JavaScript.  But Bespectacled Bear also streamline new web projects, skipping the setup time and allows you to quickly make them minimized and ready for production.
 
 ## Installation
 
