@@ -39,7 +39,7 @@ the project directory structure looks like this:
    -- js
       - app.js
       - app.js.map
-      -  app.min.js
+      - app.min.js
    - index.html
 -- src
    -- img
