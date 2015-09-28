@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'html/css/main.css': ['html/css/style.css', 'html/css/style2.css']
+          'dist/css/style.min.css': 'src/css/*.css',
         }
       }
     },
@@ -21,9 +21,9 @@ module.exports = function(grunt) {
         dist: {
             files: [{
                 "expand": true,
-                "cwd": "html/",
+                "cwd": "src/js/",
                 "src": ["**/*.es6"],
-                "dest": "html/",
+                "dest": "dist/js",
                 "ext": ".js"
             }]
         }
