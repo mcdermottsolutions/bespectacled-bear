@@ -12,12 +12,12 @@ I wanted to streamline new web projects and skip all the setup time.  I also wan
 
 ## Installation
 
-If you don't have have node, npm & grunt installed, install those first.
+If you don't have have Node, NPM & Grunt installed, install those first.
 See https://docs.npmjs.com/getting-started/installing-node & http://gruntjs.com/getting-started
 
 ---
 
-Once you have node, npm & grunt installed, do the following to install Bespectacled Bear:
+Once you have Node, NPM & Grunt installed, do the following to install Bespectacled Bear:
 
 ```shell
 git clone https://github.com/mcdermottsolutions/bespectacled-bear.git
