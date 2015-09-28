@@ -1,6 +1,8 @@
 ## Bespectacled Bear
 
-This is a Grunt starter project, preloaded with goodies like Babel, Sass, livereload, etc.  If you already have Grunt, there's very little setup.  It's just an empty web project, ready to go.
+This is an empty Grunt starter project, preloaded with goodies like Babel, Sass, livereload, etc.  If you already have Grunt, there's very little setup.  It's just an empty web project, ready to go.
+
+Demo (of just the dist folder pushed live): http://www.mcdermottsolutions.com/demos/bespectacled-bear/index.html
 
 ![alt text](https://raw.githubusercontent.com/mcdermottsolutions/bespectacled-bear/master/dist/img/bespectacled-bear.png "Bespectacled Bear Logo")
 
