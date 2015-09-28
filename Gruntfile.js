@@ -11,14 +11,31 @@ module.exports = function(grunt) {
           'html/css/main.css': ['html/css/style.css', 'html/css/style2.css']
         }
       }
-    }
+    },
+
+    "babel": {
+        "options": {
+            "sourceMap": true,
+            "experimental": true
+        },
+        dist: {
+            files: [{
+                "expand": true,
+                "cwd": "html/",
+                "src": ["**/*.es6"],
+                "dest": "html/",
+                "ext": ".js"
+            }]
+        }
+    },
 
   });
 
   // // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-babel');
 
   // Default task(s).
-  grunt.registerTask('default', ['cssmin']);
+  grunt.registerTask('default', ['cssmin','babel']);
 
 };
