@@ -12,7 +12,7 @@ I wanted to streamline new web projects and skip all the setup time.
 
 ## Installation
 
-If you don't have have node, npm & grunt installed, install those fist.
+If you don't have have node, npm & grunt installed, install those first.
 See https://docs.npmjs.com/getting-started/installing-node & http://gruntjs.com/getting-started
 
 ---
