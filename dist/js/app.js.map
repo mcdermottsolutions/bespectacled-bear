@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/js/app.es6"],"names":[],"mappings":";;AAAA,OAAO,CAAC,GAAG,CAAC,mBAAmB,CAAC,CAAC","file":"app.js","sourcesContent":["console.log('bespectacled bear');\n"]}

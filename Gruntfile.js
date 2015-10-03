@@ -28,17 +28,27 @@ module.exports = function(grunt) {
       }
     },
 
+    // clean
+    clean: {
+      dev: {
+        src: ['dev']
+      },
+      prod: {
+        src: ['dist']
+      }
+    },
+
     // sass
     sass: {
       dist: {
-        options: {                       // Target options
+        options: {
           style: 'expanded'
         },
         files: [{
           expand: true,
           cwd: 'src/scss',
-          src: '*.scss',
-          dest: 'dist/css',
+          src: ['*.scss'],
+          dest: 'dev/css',
           ext: '.css'
         }]
       }
@@ -48,73 +58,67 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'dist/css/style.min.css': 'dist/css/*.css',
+          'dist/css/style.min.css': 'dev/css/*.css',
         }
       }
     },
 
     // babel
     "babel": {
-      "options": {
-        "sourceMap": true,
-        "experimental": true
-      },
       dist: {
+        "options": {
+          "sourceMap": true,
+          "experimental": true
+        },
         files: [{
           "expand": true,
           "cwd": "src/js/",
           "src": ["**/*.es6"],
-          "dest": "dist/js",
+          "dest": "dev/js",
           "ext": ".js"
         }]
       }
     },
 
-    // uglify (minifies all js)
+    // uglify (combines & minifies all js)
     uglify: {
-      dynamic_mappings: {
-        // Grunt will search for "**/*.js" under "lib/" when the "uglify" task
-        // runs and build the appropriate src-dest file mappings then, so you
-        // don't need to update the Gruntfile when files are added or removed.
-        files: [
-          {
-            expand: true,     // Enable dynamic expansion.
-            cwd: 'dist/js',      // Src matches are relative to this path.
-            src: ['**/*.js'], // Actual pattern(s) to match.
-            dest: 'dist/js',   // Destination path prefix.
-            ext: '.min.js',   // Dest filepaths will have this extension.
-            extDot: 'first'   // Extensions in filenames begin after the first dot
-          },
-        ],
-      },
-    },
-
-    clean: {
-      build: {
-        src: ['dist']
+      dist: {
+        files: {
+          'dist/js/main.min.js': 'dev/js/*.js'
+        }
       }
     },
 
+    // copy
     copy: {
-      main: {
+      dev: {
+        expand: true,
+        cwd: 'src/',
+        src: ['*','img/*'],
+        dest: 'dev/',
+        filter: 'isFile',
+      },
+      prod: {
         expand: true,
         cwd: 'src/',
         src: ['*','img/*'],
         dest: 'dist/',
         filter: 'isFile',
-      },
+      }
     },
 
+    // watch
     watch: {
       options: {
         livereload: true,
       },
       scripts: {
         files: 'src/**',
-        tasks: ['sass','babel','copy']
+        tasks: ['env:dev', 'clean:dev', 'sass', 'babel', 'copy:dev', 'preprocess:dev']
       }
     },
 
+    // connect
     connect: {
       server: {
         options: {
@@ -145,12 +149,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-env');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('dev', ['env:dev', 'clean:dev', 'preprocess:dev']);
-  grunt.registerTask('prod', ['env:prod', 'clean:prod', 'uglify:prod', 'cssmin:prod', 'copy:prod', 'preprocess:prod']);
-  
-  // grunt.registerTask('default', ['sass','babel','copy']);
-  // grunt.registerTask('production', ['clean','sass','babel','cssmin','uglify','copy']);
-  // grunt.registerTask('server', ['connect','watch']);
+  grunt.registerTask('default', ['env:dev', 'clean:dev', 'sass', 'babel', 'copy:dev', 'preprocess:dev']);
+  grunt.registerTask('prod', ['env:prod', 'clean:prod', 'cssmin', 'uglify', 'copy:prod', 'preprocess:prod']);
+  grunt.registerTask('server', ['connect','watch']);
 
 };
