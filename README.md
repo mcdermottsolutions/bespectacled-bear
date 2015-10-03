@@ -52,6 +52,7 @@ The project directory structure looks like this:
       - script2.js
       - script2.js.map
    - index.html
+   
 -- dist
    -- css
       - style.min.css
@@ -60,6 +61,7 @@ The project directory structure looks like this:
    -- js
       - main.min.js
    - index.html
+   
 -- src
    -- img
       - bespectacled-bear.png
@@ -70,6 +72,7 @@ The project directory structure looks like this:
       - style1.scss
       - style2.scss
   - index.html
+  
 - Gruntfile.js
 - package.json
 ```
