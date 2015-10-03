@@ -6,6 +6,28 @@ module.exports = function(grunt) {
     // set package.json
     pkg: grunt.file.readJSON('package.json'),
 
+    //env
+    env : {
+      dev: {
+          NODE_ENV : 'DEVELOPMENT'
+      },
+      prod : {
+          NODE_ENV : 'PRODUCTION'
+      }
+    },
+
+    // preprocess
+    preprocess : {
+      dev : {
+          src : './src/index.html',
+          dest : './dev/index.html'
+      },
+      prod : {
+          src : './src/index.html',
+          dest : './dist/index.html'
+      }
+    },
+
     // sass
     sass: {
       dist: {
@@ -119,10 +141,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-preprocess');
+  grunt.loadNpmTasks('grunt-env');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass','babel','copy']);
-  grunt.registerTask('production', ['clean','sass','cssmin','babel','uglify','copy']);
-  grunt.registerTask('server', ['connect','watch']);
+  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('dev', ['env:dev', 'clean:dev', 'preprocess:dev']);
+  grunt.registerTask('prod', ['env:prod', 'clean:prod', 'uglify:prod', 'cssmin:prod', 'copy:prod', 'preprocess:prod']);
+  
+  // grunt.registerTask('default', ['sass','babel','copy']);
+  // grunt.registerTask('production', ['clean','sass','babel','cssmin','uglify','copy']);
+  // grunt.registerTask('server', ['connect','watch']);
 
 };
