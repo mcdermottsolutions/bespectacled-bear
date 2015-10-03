@@ -2,7 +2,14 @@
 
 This is an empty Grunt starter project, preloaded with goodies like Babel, Sass, livereload, etc.  If you already have Grunt, there's very little setup.  It's just an empty web project, ready to go.
 
-Demo (of just the dist folder pushed live): http://www.mcdermottsolutions.com/demos/bespectacled-bear/index.html
+Demo of just the dev (uncompressed) folder pushed live: 
+
+http://www.mcdermottsolutions.com/demos/bespectacled-bear/dev/index.html
+
+
+Demo of just the dist (compressed for production) folder pushed live:
+
+http://www.mcdermottsolutions.com/demos/bespectacled-bear/dist/index.html
 
 ![alt text](https://raw.githubusercontent.com/mcdermottsolutions/bespectacled-bear/master/dist/img/bespectacled-bear.png "Bespectacled Bear Logo")
 
@@ -26,34 +33,51 @@ git clone https://github.com/mcdermottsolutions/bespectacled-bear.git
 cd bespectacled-bear
 npm install
 ```
+That last line there, npm install, just installs the required node modules specified in package.json.
 
-the project directory structure looks like this:
+The project directory structure looks like this:
 
 ```
+-- dev
+   -- css
+      - style1.css
+      - style1.css.map
+      - style2.css
+      - style2.css.map
+   -- img
+      - bespectacled-bear.png
+   -- js
+      - script1.js
+      - script1.js.map
+      - script2.js
+      - script2.js.map
+   - index.html
+   
 -- dist
-   -- style.css
-      - style.css.map
+   -- css
       - style.min.css
    -- img
       - bespectacled-bear.png
    -- js
-      - app.js
-      - app.js.map
-      - app.min.js
+      - main.min.js
    - index.html
+   
 -- src
    -- img
       - bespectacled-bear.png
    -- js
-      - app.es6
+      - script1.es6
+      - script2.es6
   -- scss
-      - style.scss
+      - style1.scss
+      - style2.scss
   - index.html
+  
 - Gruntfile.js
 - package.json
 ```
 
-The src folder is for working in and the dist folder is the output folder after transpiling the es6 and minimizing the css & js.
+The src folder is for working in.  The dev folder is the browser viewable output of the src folder.  The dist folder is the minimized and compressed version of dev - dist is production ready.
 
 ---
 
@@ -61,22 +85,16 @@ If you make any changes, you'll want to run
 ```shell
 grunt
 ````
-to recompile the sass, retranspile the js, minimize the sass & js and copy everything from src to dist.
+to recompile the sass, retranspile the js and copy everything from src to dev.
 
 ---
 
-If you just want to watch for changes as you work, run
-```shell
-grunt watch
-````
-and everytime you save, it will recompile the sass, retranspile the js, minimize the sass & js and copy everything from src to dist.
-
----
-
-If you just want to do live reload and and see your changes update live in the browser, run
+If you just want to watch for changes as you work and use livereload, run
 ```shell
 grunt server
 ````
-Then go to localhost:9000 in your browser.  You'll need to add the livereload extension to your browser.  http://livereload.com/extensions/
+and everytime you save, it will recompile the sass, retranspile the js, minimize the sass & js and copy everything from src to dev. When you run the command, it will open localhost:9000 in your browser.  You'll need to add the livereload extension to your browser to get livereload working.  http://livereload.com/extensions/
+
+---
 
 Let me know if you have any questions or anything.
