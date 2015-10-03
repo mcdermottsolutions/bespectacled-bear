@@ -89,7 +89,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: 'src/**',
-        tasks: ['clean','sass','cssmin','babel','uglify','copy']
+        tasks: ['sass','babel','copy']
       }
     },
 
@@ -121,7 +121,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean','sass','cssmin','babel','uglify','copy']);
+  grunt.registerTask('default', ['sass','babel','copy']);
+  grunt.registerTask('production', ['clean','sass','cssmin','babel','uglify','copy']);
   grunt.registerTask('server', ['connect','watch']);
 
 };
