@@ -97,4 +97,11 @@ and everytime you save, it will recompile the sass, retranspile the js, minimize
 
 ---
 
+When you're ready to make the compressed, minified production version, run
+```shell
+grunt prod
+````
+
+---
+
 Let me know if you have any questions or anything.
