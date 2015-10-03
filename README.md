@@ -101,6 +101,7 @@ When you're ready to make the compressed, minified production version, run
 ```shell
 grunt prod
 ````
+and this will put the production version in the dist folder.  All css files are combined and minified to style.min.css and all js files are combined and minified to main.min.js
 
 ---
 
