@@ -67,7 +67,7 @@ The project directory structure looks like this:
 - package.json
 ```
 
-The src folder is for working in.  The dev is the browser viewable output of the src folder.  The dist folder is the minimized and compressed version of dev - dist is production ready.
+The src folder is for working in.  The dev folder is the browser viewable output of the src folder.  The dist folder is the minimized and compressed version of dev - dist is production ready.
 
 ---
 
