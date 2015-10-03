@@ -2,7 +2,8 @@
 
 This is an empty Grunt starter project, preloaded with goodies like Babel, Sass, livereload, etc.  If you already have Grunt, there's very little setup.  It's just an empty web project, ready to go.
 
-Demo (of just the dist folder pushed live): http://www.mcdermottsolutions.com/demos/bespectacled-bear/index.html
+Demo of just the dev (uncompressed) folder pushed live: http://www.mcdermottsolutions.com/demos/bespectacled-bear/dev/index.html
+Demo of just the dist (compressed for production) folder pushed live: http://www.mcdermottsolutions.com/demos/bespectacled-bear/dist/index.html
 
 ![alt text](https://raw.githubusercontent.com/mcdermottsolutions/bespectacled-bear/master/dist/img/bespectacled-bear.png "Bespectacled Bear Logo")
 
